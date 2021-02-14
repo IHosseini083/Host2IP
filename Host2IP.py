@@ -40,15 +40,15 @@ def banner():
 
     TEXT = f"""
 
-   _               _   ___  _       
-  | |             | | |__ \(_)      
-  | |__   ___  ___| |_   ) |_ _ __  
-  | '_ \ / _ \/ __| __| / /| | '_ \ 
-  | | | | (_) \__ \ |_ / /_| | |_) |
-  |_| |_|\___/|___/\__|____|_| .__/ 
-                             | |    
-                             |_|    
-    Version : {SCRIPT_VERSION} ~ TelegramChannel : {TELEGRAM_CHANNEL} 
+        _               _   ___  _       
+       | |             | | |__ \(_)      
+       | |__   ___  ___| |_   ) |_ _ __  
+       | '_ \ / _ \/ __| __| / /| | '_ \ 
+       | | | | (_) \__ \ |_ / /_| | |_) |
+       |_| |_|\___/|___/\__|____|_| .__/ 
+                                  | |    
+                                  |_|    
+        Version : {SCRIPT_VERSION} ~ TelegramChannel : {TELEGRAM_CHANNEL} 
 
  + =============================================== +                                           
            \n\n"""
@@ -69,11 +69,17 @@ def start():
         try:
             # Get host name from user
             HOST = input(GREEN + " [+]" + LIGHTYELLOW + " Please enter the host name > " + LIGHTWHITE + "")
+            # Remove 'http://' and 'https://' in host name
+            if "http://" in HOST or "https://" in HOST:
+                HOST.replace("http://", "").replace("https://", "")
+            # Show error if 'HOST' is empty
+            if HOST == "":
+                printer.out(RED + " [-] Error : Please enter a host name !!!")
             # break the loop if user entered 'exit'
             if HOST.lower() == "exit":
                 break
             else:
-                # get ip address of host name
+                # get ip address of host name using socket library
                 IP = gethostbyname(HOST)
                 print("\n")
                 printer.out(LIGHTRED + " [+]" + LIGHTCYAN + " Finding IP address ...")
@@ -81,10 +87,14 @@ def start():
                 printer.out(LIGHTGREEN + " [+]" + LIGHTCYAN + " Found IP address of " + LIGHTWHITE
                             + f"[{HOST}]" + LIGHTCYAN + " |" + LIGHTWHITE + f" {IP}")
                 sleep(3)
-                input(RED + "\n\n [+] Press [ENTER] to try again... ")
+                input(LIGHTWHITE + "\n\n [+] Press [ENTER] to try again... ")
         except Exception as e:
-            # print error
-            print("\n" + RED + f" [-] Error : {e}")
+            if "getaddrinfo failed" and "11001" in str(e):
+                print("\n" + RED + "[-] Error : Please enter a valid host name ! (e.g github.com)")
+            else:
+                # print general error
+                print("\n" + RED + f" [-] Error : {e}")
+            input(LIGHTWHITE + "\n\n [+] Press [ENTER] to try again... ")
         except KeyboardInterrupt:
             # break the loop if user pressed 'Ctrl+C'
             system("cls" if name == "nt" else "clear")
