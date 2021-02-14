@@ -21,6 +21,6 @@ With this script you can obtain IP address a host name !
 
 --------------------------------------------------------------------
 ### Screen Shot
-![Screen Shot of script](https://github.com/IHosseini083/Host2IP/blob/main/ss/img.png "Screen Shot of script")
+![Screen Shot of script](https://github.com/IHosseini083/Host2IP/blob/master/ss/img.png "Screen Shot of script")
 
  
