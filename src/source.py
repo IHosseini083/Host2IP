@@ -1,10 +1,10 @@
 import socket as s
 
-hostName = input('PLease Enter name host:')
+hostName = input('PLease Enter host name :')
 
 try:
         ip = s.gethostbyname(hostName)
 except:
-        print("try bad input ''' ")
+        print("Bad input. try again")
 
 print('ip of {} is {}'.format(hostName , ip))
