@@ -19,3 +19,4 @@ With this script you can obtain IP address a host name !
 5. Enter `python Host2IP.py` or `python3 Host2IP.py`
 6. Enjoy (:
 
+ 
