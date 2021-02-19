@@ -5,12 +5,14 @@
 ![Code Size](https://img.shields.io/github/languages/code-size/IHosseini083/Host2IP) ![Top Language](https://img.shields.io/github/languages/top/IHosseini083/Host2IP) ![GitHub stars](https://img.shields.io/github/stars/IHosseini083/Host2IP)
 --------------------------------------------------------------------
 ### [!] Disclaimer
-I'm not the coder and this is a fork of [Find-IP]("https://github.com/DistroTEAM/Find-IP") by [DistroTEAM]("https://github.com/DistroTEAM)
+I'm not the coder and this is a fork of [Find-IP]("https://github.com/DistroTEAM/Find-IP") by [DistroTEAM]("https://github.com/DistroTEAM")
 
-### [!] About unsplash
+### [!] About Host2IP
+
 With this script you can obtain IP address a host name !
 
 --------------------------------------------------------------------
+
 ### [?] How to use this script on ( windows, mac, linux )
 1. First download python and install on your system. [Download Python +3.8](https://www.python.org/downloads/)
 2. Download [this project](https://codeload.github.com/IHosseini083/Host2IP/zip/main) and extract it.
@@ -20,7 +22,12 @@ With this script you can obtain IP address a host name !
 6. Enjoy (:
 
 --------------------------------------------------------------------
+
 ### Screen Shot
-![Screen Shot of script](https://github.com/IHosseini083/Host2IP/blob/master/ss/img.png "Screen Shot of script")
+![screen shot of Host2IP v1.1](https://github.com/IHosseini083/Host2IP/blob/master/ss/img1.png "screen shot of Host2IP v1.1")
+
+--------------------------------------------------------------------
+
+![screen shot of Host2IP v1.1](https://github.com/IHosseini083/Host2IP/blob/master/ss/img2.png "screen shot of Host2IP v1.1")
 
  
