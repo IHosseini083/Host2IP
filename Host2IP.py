@@ -84,18 +84,12 @@ def start():
             # Remove 'http://' and 'https://' in host name
             if "http://" in HOST or "https://" in HOST:
                 HOST.replace("http://", "").replace("https://", "")
-            else:
-                pass
             # Remove "www." from host name
             if "www." in HOST:
                 HOST.replace("www.", "")
-            else:
-                pass
             # Show error if 'HOST' is empty
             if len(HOST) == 0:
                 printer.out(RED + " [-] Error : Please enter a host name !!!")
-            else:
-                pass
             # break the loop if user entered 'exit'
             if HOST.lower() == "q":
                 system("cls" if name == "nt" else "clear")
@@ -121,30 +115,86 @@ def start():
                 except:
                     SERVER = "Unknown Server"
                 print("\n")
-                printer.out(LIGHTRED + " [+]" + LIGHTCYAN + " Retrieving IP address ...")
+                printer.out(f'{LIGHTRED} [+]{LIGHTCYAN} Retrieving IP address ...')
                 sleep(3)
-                printer.out(LIGHTGREEN + " [+] " + LIGHTWHITE
-                            + f"{HOST}" + LIGHTCYAN + " |" + LIGHTWHITE + f" {IP} " + LIGHTCYAN + "| " +
-                            LIGHTWHITE + f"{COUNTRY}" + LIGHTCYAN + " - " + LIGHTWHITE + f"{REGION}" +
-                            LIGHTCYAN + " | " + LIGHTWHITE + f"{SERVER}")
+                printer.out(
+                    (
+                        (
+                            (
+                                (
+                                    (
+                                        (
+                                            (
+                                                (
+                                                    (
+                                                        (
+                                                            (
+                                                                (
+                                                                    (
+                                                                        (
+                                                                            (
+                                                                                (
+                                                                                    (
+                                                                                        f'{LIGHTGREEN} [+] {LIGHTWHITE}'
+                                                                                        + f"{HOST}"
+                                                                                    )
+                                                                                    + LIGHTCYAN
+                                                                                )
+                                                                                + " |"
+                                                                            )
+                                                                            + LIGHTWHITE
+                                                                        )
+                                                                        + f" {IP} "
+                                                                    )
+                                                                    + LIGHTCYAN
+                                                                )
+                                                                + "| "
+                                                            )
+                                                            + LIGHTWHITE
+                                                        )
+                                                        + f"{COUNTRY}"
+                                                    )
+                                                    + LIGHTCYAN
+                                                )
+                                                + " - "
+                                            )
+                                            + LIGHTWHITE
+                                        )
+                                        + f"{REGION}"
+                                    )
+                                    + LIGHTCYAN
+                                )
+                                + " | "
+                            )
+                            + LIGHTWHITE
+                        )
+                        + f"{SERVER}"
+                    )
+                )
+
                 sleep(2)
                 print("\n\n")
-                input(LIGHTWHITE + " [+] Press [" + RED + "ENTER" + LIGHTWHITE + "] to try again... ")
+                input(f'{LIGHTWHITE} [+] Press [{RED}ENTER{LIGHTWHITE}] to try again... ')
         except Exception as e:
+            print("\n")
             # this error occurred because of connection issues or bad entry
-            if "getaddrinfo failed" and "11001" in str(e):
-                print("\n")
-                print(LIGHTRED + " [-] " + LIGHTYELLOW + "Error : Check your internet connection\n\n or check if you "
-                                                         "entered a valid host name ! (e.g github.com)")
+            if "11001" in str(e):
+                print(
+                    (
+                        f'{LIGHTRED} [-] {LIGHTYELLOW}'
+                        + "Error : Check your internet connection\n\n or check if you "
+                        "entered a valid host name ! (e.g github.com)"
+                    )
+                )
+
                 sleep(2)
                 print("\n")
             else:
-                print("\n")
                 # print general error
-                print(LIGHTRED + " [-]" + LIGHTYELLOW + f" Error : {e}")
+                print(f'{LIGHTRED} [-]{LIGHTYELLOW}' + f" Error : {e}")
                 sleep(2)
                 print("\n\n")
-            input(LIGHTWHITE + " [+] Press [" + RED + "ENTER" + LIGHTWHITE + "] to try again... ")
+            input(f'{LIGHTWHITE} [+] Press [{RED}ENTER{LIGHTWHITE}] to try again... ')
         except KeyboardInterrupt:
             # break the loop if user pressed 'Ctrl+C'
             system("cls" if name == "nt" else "clear")
